@@ -1,0 +1,2 @@
+# masterplan
+Trust the plan.
