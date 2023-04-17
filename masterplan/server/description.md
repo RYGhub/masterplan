@@ -1,0 +1,1 @@
+> An open-source event management platform for small communities.
