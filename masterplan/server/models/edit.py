@@ -9,6 +9,7 @@ from datetime import datetime
 __all__ = (
     "UserEdit",
     "ServerEdit",
+    "EventEdit"
 )
 
 
@@ -42,3 +43,16 @@ class ServerEdit(base.ApiORMModel):
     motd: str
     logo_uri: t.Optional[str]
     custom_colors: t.Optional[Colors]
+
+
+class EventEdit(base.ApiORMModel):
+    """
+    **Edit** model for :class:`.database.tables.Event`.
+    """
+
+    title: str
+    description: str
+    open_until: datetime
+    start: datetime
+    end: datetime
+    hidden: bool

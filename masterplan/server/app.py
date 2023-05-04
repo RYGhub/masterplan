@@ -10,6 +10,7 @@ from masterplan.server.handlers import handle_api_error, handle_sqlalchemy_not_f
     handle_sqlalchemy_multiple_results, handle_generic_error
 from masterplan.server.routes.api.users.v1.router import router as router_api_user_v1
 from masterplan.server.routes.api.server.v1.router import router as router_api_server_v1
+from masterplan.server.routes.api.event.v1.router import router as router_api_event_v1
 from fastapi_pagination import add_pagination
 
 with open(pathlib.Path(__file__).parent.joinpath("description.md")) as file:
@@ -32,6 +33,7 @@ async def root():
 
 app.include_router(router_api_user_v1)
 app.include_router(router_api_server_v1)
+app.include_router(router_api_event_v1)
 
 app.add_exception_handler(ApiException, handle_api_error)
 app.add_exception_handler(sqlalchemy.exc.NoResultFound, handle_sqlalchemy_not_found)

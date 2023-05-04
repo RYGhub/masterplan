@@ -13,6 +13,7 @@ from masterplan.server.authentication import auth
 __all__ = (
     "dep_user",
     "dep_admin",
+    "dep_planner"
 )
 
 
@@ -55,5 +56,11 @@ def dep_admin(
         user: tables.User = fastapi.Depends(dep_user)
 ):
     if not user.admin_of:
+        raise InvalidCredentials
+    return user
+
+
+def dep_planner(user: tables.User = fastapi.Depends(dep_user)):
+    if not user.is_planner:
         raise InvalidCredentials
     return user

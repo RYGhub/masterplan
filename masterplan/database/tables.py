@@ -3,10 +3,11 @@ import os
 
 import sqlalchemy.orm
 import requests
-from sqlalchemy import Table, Column, String, LargeBinary, ForeignKey, JSON, DateTime, Boolean, Float
+from sqlalchemy import Table, Column, String, LargeBinary, ForeignKey, JSON, DateTime, Boolean, Enum
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 import datetime
+
 
 __all__ = (
     "Base",

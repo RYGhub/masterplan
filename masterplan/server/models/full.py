@@ -3,6 +3,7 @@ from masterplan.server.models import read, base
 
 __all__ = ("UserFull",
            "ServerFull",
+           "EventFull",
            "Planetarium",)
 
 
@@ -27,5 +28,10 @@ class Planetarium(base.ApiModel):
 
     server: ServerFull
 
+
 class UserFull(read.UserRead):
+    pass
+
+
+class EventFull(read.EventRead):
     pass
